@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compiler Design Lab Assignment</title>
+</head>
+
+<body>
+          
+</body>
+
+</html>
+
+
+<script>
+
+  var tempRead = [];   //Initial File Read Store Here
+
+  var patt1 = new RegExp("while[ |\n]*\([ |\n]*[\w]+[ |\n]*[!=><][!=><][ |\n]*[\w]+[ |\n]*\)*");    //Regex For While and Condition
+  var patt2 = new RegExp("begin");                                                                      //Regex For Begin
+  var patt3 = new RegExp("[A-Za-z][A-Za-z0-9]*[+-/*%]?=[-]?[A-Za-z0-9]+[+-/*%][-]?[A-Za-z0-9]+;");         //Regex For Statement
+  var patt4 = new RegExp("end");                                                                               //Regex For End
+
+  var count = 0;
+
+
+  fetch('test.txt')               //File Fetch
+    .then((response) => {
+      return response.text();
+    })
+    .then((data) => {
+
+          tempRead.push(data.split("\n"));    //Temporary Store
+
+
+
+          for (var i = 0; i < tempRead.length; i++) {
+            tempRead[i] = tempRead[i].toString().replace(/[\n\r\t]/g, "");    //Clean Read Line
+
+          }
+
+          var cleanRead = tempRead[0].split(",");     //Store Clean Read Line
+
+
+
+          for (var i = 0; i < cleanRead.length; i++) {
+            //console.log(cleanRead[i]);
+
+                //////////////////////////
+                //      Dedar Alam      \\
+                //////////////////////////
+
+            //Compare Line With Regex
+
+            if (patt1.test(cleanRead[i]) || patt2.test(cleanRead[i]) || patt3.test(cleanRead[i]) || patt4.test(cleanRead[i])) {
+              console.log("Correct Line: " + (i+1));   //After Each Line Correct Show a Message In Browser Console
+              count++;
+            }else{
+              console.log("icorrect Line: " + (i+1));   //When Incorrect Line Found it show the incorrect line number
+              break;            //After Found Incorrect Line Break here that means stop comparing
+            }
+          }
+
+          
+         
+
+          if(count == cleanRead.length){
+            document.write("While Loop is Valid");     //When every Line is correct it shows this message in UI
+          }else{
+            document.write("While Loop is invalid");
+            document.write(" Incorrect Line: "+ (count+1));   //When incorrect line is exist it shows this message in UI also incorrect  line number
+          }
+
+
+    });
+</script>
+
+
