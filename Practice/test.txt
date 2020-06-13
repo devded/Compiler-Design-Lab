@@ -1,0 +1,7 @@
+int 11Dedar111dd11 = 10;
+int a + b;
+
+
+{
+    int dedar;
+}
