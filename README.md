@@ -1,5 +1,5 @@
 ## Problem statement
-Imagine the syntax of a programming language construct such as _while-loop_ --
+Imagine the syntax of a programming language construct such as while-loop
 ```
 while ( condition ) 
 begin 
