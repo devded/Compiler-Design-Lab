@@ -1,0 +1,1 @@
+#### Read a File Identify Capital Letter, Small Letter & Digit 
