@@ -1,8 +1,10 @@
-while(x==20)
-begin
-	a=56*54;
-	b=a%98;
-	b*=-a*-98;
-    a=a+b;
-    x=10+y;
-end
+
+#include<stdio.h>
+void main(){
+    int  11dedar123;
+    int a=10, b=20;
+    int c = a + b;
+    return 0;
+}
+
+

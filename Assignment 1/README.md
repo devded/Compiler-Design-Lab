@@ -1,11 +1,6 @@
-#### `Program 1` From Input Identify
-- Prenthesis
-- Operator
-- Identifier 
-- Keyword 
+#### `Program 1` Execute Indirect Left Recursion
 
-#### `Program 2` Lex Program That Read C Program File & Identify 
- - Prenthesis
- - Operator
- - Identifier 
- - Keyword 
+#### `Program 2` Read a Program File and Remove all types of comment then print the program
+- Inline Comment
+- Block Comment
+- Line Comment
